@@ -1289,3 +1289,15 @@ footer .credits a {
   font-size: 0.9rem;
   color: #555;
 }
+
+/* Style for Linked Text */
+.linked-text {
+  color: #0078ff;               /* Blue text */
+  text-decoration: underline;   /* Underline text */
+  font-weight: bold;            /* Bold text */
+  transition: color 0.3s ease;  /* Smooth color change */
+}
+
+.linked-text:hover {
+  color: #0056b3;               /* Darker blue when hovered */
+}
