@@ -768,6 +768,25 @@ a:hover {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-box2 a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.work-box2 .work-content2 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-md-4.mb-4 {
+  display: flex;
 }
 
 .work-box:hover img {
