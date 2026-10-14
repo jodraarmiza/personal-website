@@ -1591,3 +1591,104 @@ footer .credits a {
     transform: none;
   }
 }
+
+/*--/ Language toggle /--*/
+
+.lang-item {
+  display: flex;
+  align-items: center;
+}
+
+.lang-toggle {
+  --lang-color: #fff;
+  --lang-active-text: #0b1a33;
+  display: inline-flex;
+  padding: 2px;
+  margin-left: .5rem;
+  border: 1px solid var(--lang-color);
+  border-radius: 5rem;
+  background: transparent;
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.navbar-reduce .lang-toggle {
+  --lang-color: #0078ff;
+  --lang-active-text: #fff;
+}
+
+.lang-toggle span {
+  padding: .3rem .6rem;
+  border-radius: 5rem;
+  color: var(--lang-color);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+.lang-toggle:not(.is-id) [data-lang="en"],
+.lang-toggle.is-id [data-lang="id"] {
+  background-color: var(--lang-color);
+  color: var(--lang-active-text);
+}
+
+.lang-toggle:focus {
+  outline: 0;
+}
+
+.lang-toggle:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 120, 255, .4);
+}
+
+@media (max-width: 767px) {
+  .lang-toggle {
+    margin: .5rem 0;
+  }
+}
+
+/*--/ Equal-height portfolio & certificate cards /--*/
+
+#work .row > .col-md-4 {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+#work .work-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#work .work-box > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#work .work-content {
+  flex-grow: 1;
+}
+
+.work-box2 {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#work .work-img,
+#certificates .work-img {
+  aspect-ratio: 16 / 10;
+  background-color: #f5f5f5;
+}
+
+#work .work-img img,
+#certificates .work-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+#work .work-img img {
+  object-position: left top;
+}
