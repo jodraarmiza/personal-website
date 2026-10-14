@@ -1338,3 +1338,256 @@ footer .credits a {
     height: 70vh;
   }
 }
+
+/*--/ Experience /--*/
+
+.exp-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.exp-role {
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+
+.exp-company {
+  color: #4e4e4e;
+  margin-bottom: 0;
+}
+
+.exp-date {
+  background-color: #0078ff;
+  color: #fff;
+  border-radius: 5rem;
+  padding: .25rem .9rem;
+  font-size: .9rem;
+  white-space: nowrap;
+}
+
+.exp-list {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.exp-list li {
+  margin-bottom: .5rem;
+  line-height: 1.6;
+}
+
+.exp-note {
+  color: #4e4e4e;
+}
+
+.exp-tags span {
+  display: inline-block;
+  border: 1px solid #0078ff;
+  color: #0078ff;
+  border-radius: 5rem;
+  padding: .15rem .75rem;
+  margin: 0 .4rem .4rem 0;
+  font-size: .85rem;
+}
+
+/*======================================
+//--//-->   ANIMATIONS
+======================================*/
+
+/*--/ Scroll progress /--*/
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+/*--/ Hero background /--*/
+
+#home.intro {
+  background: linear-gradient(135deg, #0b1220, #10224a, #0b1a33, #0f2b5c);
+  background-size: 300% 300%;
+  animation: hero-gradient 18s ease infinite;
+  overflow: hidden;
+}
+
+#home .overlay-itro {
+  background-color: transparent;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  opacity: 1;
+}
+
+#home::before,
+#home::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: .45;
+  pointer-events: none;
+}
+
+#home::before {
+  width: 420px;
+  height: 420px;
+  background: #0078ff;
+  top: 10%;
+  left: 8%;
+  animation: hero-float 14s ease-in-out infinite;
+}
+
+#home::after {
+  width: 360px;
+  height: 360px;
+  background: #00c6ff;
+  bottom: 8%;
+  right: 10%;
+  opacity: .3;
+  animation: hero-float 17s ease-in-out infinite reverse;
+}
+
+#home .intro-content {
+  z-index: 1;
+}
+
+#home .intro-title {
+  animation: fade-up .9s ease-out .2s both;
+}
+
+#home .intro-subtitle {
+  animation: fade-up .9s ease-out .5s both;
+}
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 2.5rem;
+  width: 26px;
+  height: 42px;
+  margin-left: -13px;
+  border: 2px solid rgba(255, 255, 255, .7);
+  border-radius: 14px;
+  z-index: 2;
+  animation: fade-up .9s ease-out 1s both;
+}
+
+.scroll-down::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: #fff;
+  animation: scroll-wheel 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.1); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scroll-wheel {
+  0% { opacity: 0; transform: translateY(0); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(12px); }
+}
+
+/*--/ Scroll reveal /--*/
+
+.js-anim .reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s ease-out, transform .7s ease-out;
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.js-anim .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/*--/ Skill bars /--*/
+
+.js-anim .skill-mf .progress-bar {
+  transition: width 1.4s cubic-bezier(.22, .61, .36, 1);
+}
+
+/*--/ Card hover /--*/
+
+.service-box,
+.work-box,
+.work-box2,
+.exp-item {
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.service-box:hover,
+.work-box:hover,
+.work-box2:hover,
+.exp-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 40, 100, .12);
+}
+
+.exp-tags span {
+  transition: background-color .25s ease, color .25s ease;
+}
+
+.exp-tags span:hover {
+  background-color: #0078ff;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home.intro,
+  #home::before,
+  #home::after,
+  #home .intro-title,
+  #home .intro-subtitle,
+  .scroll-down,
+  .scroll-down::before {
+    animation: none;
+  }
+
+  .js-anim .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .service-box:hover,
+  .work-box:hover,
+  .work-box2:hover,
+  .exp-item:hover {
+    transform: none;
+  }
+}
